@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-searchbar [debounce]="200" #searchbar></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  @if(generators().length > 0) {
+    <app-generators-list [filter]="searchbar.value"></app-generators-list>
+  } @else {
+    <div class="empty-message">
+      <p>{{text.empty}}</p>
+    </div>
+  }
+</ion-content>
+
+<!-- Buttons to add new generators -->
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button size="large" color="secondary">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-list side="top">
+    <ion-fab-button (click)="addTextClicked()">
+      <ion-icon name="text"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button (click)="addQrClicked()">
+      <ion-icon name="qr-code"></ion-icon>
+    </ion-fab-button>
+  </ion-fab-list>
+</ion-fab>

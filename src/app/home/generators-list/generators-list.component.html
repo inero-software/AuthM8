@@ -1,0 +1,39 @@
+<ion-list>
+  @for (gen of filteredGenerators(); track gen.params.secret) {
+    <ion-item-sliding #sliding>
+      <ion-item (click)="sliding.open('end')">
+        <ion-label>
+          <div class="horizontal">
+            <div class="service">{{ gen.params.service }}</div>
+            <div class="otp-code" (click)="copyCode($index, $event)">
+              {{ gen.code.otp }}
+            </div>
+          </div>
+          <div class="horizontal">
+            <div class="account">{{ gen.params.account }}</div>
+            <div class="digit-timer">{{ secsRemaining(gen) }}s</div>
+          </div>
+          <div
+            class="bar-timer"
+            [style.width]="barTimerWidth(gen)"
+            [style.transition]="barTimerTransition(gen)"
+          ></div>
+        </ion-label>
+      </ion-item>
+
+      <ion-item-options>
+        <ion-item-option (click)="editGenerator($index); sliding.close()">
+          <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+        </ion-item-option>
+        <ion-item-option
+          color="danger"
+          (click)="deleteGenerator($index); sliding.close()"
+        >
+          <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  } @empty {
+    <div class="no-matches">{{ text.noMatching }}</div>
+  }
+</ion-list>

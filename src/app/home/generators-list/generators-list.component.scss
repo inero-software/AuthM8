@@ -1,0 +1,58 @@
+ion-item {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+ion-label {
+    display: block;
+    width: 100%;
+    flex: none;
+}
+
+.horizontal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.service {
+    font-size: 15pt;
+    max-width: 50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.account {
+    font-size: 12pt;
+    max-width: 50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.digit-timer {
+    font-size: 12pt;
+}
+
+.otp-code {
+    font-size: 20pt;
+    color: var(--ion-color-primary);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bar-timer {
+    height: 10px;
+    width: 100%;
+    background-color: var(--ion-color-secondary);
+    border-radius: 5px;
+}
+
+.no-matches {
+    text-align: center;
+    color: var(--ion-color-medium);
+    margin-top: 40px;
+}

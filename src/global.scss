@@ -1,0 +1,56 @@
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+ion-item,
+ion-list {
+    --background: var(--ion-background-color) !important;
+    background: var(--ion-background-color) !important;
+}
+
+// Barcode scanner overlay covers the camera preview by default. This CSS makes the overlay transparent so the camera preview is visible.
+body.barcode-scanning-active {
+    visibility: hidden;
+    --background: transparent;
+    --ion-background-color: transparent;
+}
+
+.barcode-scanning-modal {
+    visibility: visible;
+}
+
+.alert-button[disabled] {
+    opacity: 0.5;
+}
+
+ion-item {
+    overflow: visible;
+}
+
+ion-toolbar.ios {
+    padding-top: calc(max(var(--ion-safe-area-top, 0), 15px)) !important;
+}
+
+.modal.ios {
+    --border-radius: 10px;
+}
+
+.modal.md {
+    --border-radius: 10px 10px 0 0;
+}
+
+.button-disabled {
+    opacity: 0.2;
+}

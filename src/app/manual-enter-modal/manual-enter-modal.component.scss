@@ -1,0 +1,9 @@
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+ion-item:has(ion-select) {
+    padding-right: calc(var(--ion-safe-area-right, 0px) + var(--inner-padding-end));
+}

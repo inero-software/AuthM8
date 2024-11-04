@@ -1,0 +1,20 @@
+div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+p {
+    font-size: 2rem;
+}
+
+ion-icon {
+    font-size: 3rem;
+}
+
+img {
+    max-width: 70%;
+    margin-bottom: 50px;
+}

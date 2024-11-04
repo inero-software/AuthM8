@@ -1,0 +1,14 @@
+.empty-message {
+  width: 70%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--ion-color-medium);
+}
+
+ion-fab {
+  margin-right: 16px;
+  margin-bottom: 16px;
+}

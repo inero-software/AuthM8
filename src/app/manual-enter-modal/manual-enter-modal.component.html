@@ -1,0 +1,66 @@
+<ion-content class="ion-padding">
+  <form [formGroup]="form!" (ngSubmit)="submit()">
+    <ion-card>
+      <ion-card-content>
+        {{ text.disclaimer }}
+      </ion-card-content>
+    </ion-card>
+    <ion-item lines="none">
+      <ion-label position="stacked">{{ text.issuer }}</ion-label>
+      <ion-input
+        formControlName="service"
+        type="text"
+        [errorText]="text.issuerError"
+      ></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label position="stacked">{{ text.account }}</ion-label>
+      <ion-input
+        formControlName="account"
+        type="text"
+        [errorText]="text.accountError"
+      ></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label position="stacked">{{ text.secret }}</ion-label>
+      <ion-input
+        formControlName="secret"
+        type="text"
+        [errorText]="text.secretError"
+      ></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label position="stacked">{{ text.digits }}</ion-label>
+      <ion-input
+        formControlName="digits"
+        type="number"
+        [errorText]="text.digitsError"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">{{ text.algorithm }}</ion-label>
+      <ion-select formControlName="algorithm">
+        <ion-select-option value="SHA1">SHA1</ion-select-option>
+        <ion-select-option value="SHA256">SHA256</ion-select-option>
+        <ion-select-option value="SHA512">SHA512</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label position="stacked">{{ text.period }}</ion-label>
+      <ion-input
+        formControlName="period"
+        type="number"
+        [errorText]="text.periodError"
+      ></ion-input>
+    </ion-item>
+
+    <div class="buttons">
+      <ion-button type="submit" expand="block" [disabled]="!form!.valid">{{
+        text.submit
+      }}</ion-button>
+      <ion-button expand="block" color="medium" (click)="cancel()">{{
+        cancelText
+      }}</ion-button>
+    </div>
+  </form>
+</ion-content>
