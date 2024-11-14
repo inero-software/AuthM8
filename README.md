@@ -63,3 +63,6 @@ Customizing the app:
   * Replace files in `assets/` (not in `src/assets`!)
   * The dimensions of the images should not be changed.
   * Run `npx @capacitor/assets generate`.
+
+
+[![customize-authm8](readme_graphics/customize_authm8.png)](https://youtu.be/ghb3JjF_tYk)
